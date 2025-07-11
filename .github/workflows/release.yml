@@ -25,10 +25,7 @@ jobs:
         uses: ./.github/composite-actions/install
 
       - name: Build
-        run: yarn build:prod
-
-      - name: Create .npmrc for Changesets
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+        run: yarn build
 
       - name: Create release Pull Request or publish to NPM
         id: changesets
@@ -37,14 +34,16 @@ jobs:
           publish: yarn release
           commit: "ci(changesets): version packages"
         env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Create @dev release
         if: steps.changesets.outputs.published != 'true'
         run: |
           git checkout main
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-          yarn version prerelease
-          yarn npm publish --tag dev
+          yarn version:dev
+          yarn release:dev
         env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
