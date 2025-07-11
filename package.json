@@ -29,8 +29,8 @@
     "test": "vitest",
     "lint": "biome lint",
     "newchangeset": "yarn exec changeset",
-    "version": "yarn changeset version",
-    "release": "yarn changeset publish"
+    "version:dev": "yarn version prerelease --preid dev",
+    "release:dev": "yarn npm publish --tag dev"
   },
   "sideEffects": false,
   "keywords": [
