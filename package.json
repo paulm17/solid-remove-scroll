@@ -23,8 +23,8 @@
     }
   },
   "scripts": {
-    "build": "rollup -c --no-sourcemap",
-    "build:prod": "rollup -c --no-sourcemap",
+    "build": "tsc && rollup -c --no-sourcemap",
+    "build:prod": "tsc && rollup -c --no-sourcemap",
     "prepublishOnly": "npm run build:prod",
     "test": "vitest",
     "lint": "biome lint",
@@ -68,6 +68,7 @@
     "vitest": "^3.0.9"
   },
   "dependencies": {
+    "solid-js": "^1.9.7",
     "solid-prevent-scroll": "0.1.10"
   },
   "browser": {},
