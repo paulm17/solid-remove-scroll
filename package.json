@@ -1,5 +1,5 @@
 {
-  "name": "solid-remove-scroll",
+  "name": "@empoleon/solid-remove-scroll",
   "version": "0.0.1",
   "type": "module",
   "source": ".dist/source/index.jsx",
@@ -27,7 +27,9 @@
     "build:prod": "rollup -c --no-sourcemap",
     "prepublishOnly": "npm run build:prod",
     "test": "vitest",
-    "lint": "biome lint"
+    "lint": "biome lint",
+    "changeset": "yarn changeset",
+    "release": "yarn changeset publish"
   },
   "sideEffects": false,
   "keywords": [

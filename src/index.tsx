@@ -4,7 +4,7 @@ import createPreventScroll from 'solid-prevent-scroll';
 export type RemoveScrollProps = {
   /** Activate/deactivate the scroll lock */
   enabled?: boolean;
-  /** Hide body scrollbar when locked (React’s removeScrollBar) */
+  /** Hide body scrollbar when locked (Solid’s removeScrollBar) */
   hideScrollbar?: boolean;
   /** Add padding/margin to avoid layout shift */
   preventScrollbarShift?: boolean;
@@ -13,7 +13,7 @@ export type RemoveScrollProps = {
   restoreScrollPosition?: boolean;
   /** Allow pinch‑zoom gestures */
   allowPinchZoom?: boolean;
-  /** Disable isolation (React’s noIsolation/inert) */
+  /** Disable isolation (Solid’s noIsolation/inert) */
   noIsolation?: boolean;
   className?: string;
   children?: JSX.Element;
