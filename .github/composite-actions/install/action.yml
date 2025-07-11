@@ -4,11 +4,6 @@ description: "Sets up Node.js and runs install"
 runs:
   using: composite
   steps:
-    - name: Install dependencies
-      uses: yarn/action-setup@v2.2.4
-      with:
-        version: 7
-
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
@@ -18,4 +13,4 @@ runs:
 
     - name: Install dependencies
       shell: bash
-      run: yarn install --no-frozen-lockfile
+      run: yarn install
