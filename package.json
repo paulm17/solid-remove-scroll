@@ -31,7 +31,6 @@
     "prepublishOnly": "npm run build:prod",
     "test": "vitest",
     "lint": "biome lint",
-    "changeset": "yarn changeset",
     "release": "yarn changeset publish"
   },
   "sideEffects": false,
