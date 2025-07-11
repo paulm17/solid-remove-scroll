@@ -4,4 +4,4 @@
 
 First initial release
 
-0.0.11
+0.0.12
