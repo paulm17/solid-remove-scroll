@@ -1,6 +1,6 @@
 {
   "name": "@empoleon/solid-remove-scroll",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "type": "module",
   "source": ".dist/source/index.jsx",
   "main": "./dist/cjs/index.cjs",
